@@ -50,7 +50,7 @@
         }
 
         async function updateContractBalance() {
-            const contractAddress = "0xa51f6f055a9833ec4DEC9219895742e018933E70";
+            const contractAddress = "0xbB7EFAbC551D459B0149eF8E15b39b6b450f9f6C";
             const contractABI = [
             {
                 "inputs": [],
@@ -133,6 +133,19 @@
                 ],
                 "stateMutability": "view",
                 "type": "function"
+            },
+            {
+                "inputs": [],
+                "name": "owner",
+                "outputs": [
+                    {
+                        "internalType": "address",
+                        "name": "",
+                        "type": "address"
+                    }
+                ],
+                "stateMutability": "view",
+                "type": "function"
             }
         ];
 
@@ -146,7 +159,7 @@
 
         async function deposit() {
             const amount = document.getElementById("amount").value;
-            const contractAddress = "0xa51f6f055a9833ec4DEC9219895742e018933E70";
+            const contractAddress = "0xbB7EFAbC551D459B0149eF8E15b39b6b450f9f6C";
             const contractABI = [
             {
                 "inputs": [],
@@ -225,6 +238,19 @@
                         "internalType": "uint256",
                         "name": "",
                         "type": "uint256"
+                    }
+                ],
+                "stateMutability": "view",
+                "type": "function"
+            },
+            {
+                "inputs": [],
+                "name": "owner",
+                "outputs": [
+                    {
+                        "internalType": "address",
+                        "name": "",
+                        "type": "address"
                     }
                 ],
                 "stateMutability": "view",
@@ -243,7 +269,7 @@
 
         async function withdraw() {
             const amount = document.getElementById("amount").value;
-            const contractAddress = "0xa51f6f055a9833ec4DEC9219895742e018933E70";
+            const contractAddress = "0xbB7EFAbC551D459B0149eF8E15b39b6b450f9f6C";
             const contractABI = [
             {
                 "inputs": [],
@@ -322,6 +348,19 @@
                         "internalType": "uint256",
                         "name": "",
                         "type": "uint256"
+                    }
+                ],
+                "stateMutability": "view",
+                "type": "function"
+            },
+            {
+                "inputs": [],
+                "name": "owner",
+                "outputs": [
+                    {
+                        "internalType": "address",
+                        "name": "",
+                        "type": "address"
                     }
                 ],
                 "stateMutability": "view",
