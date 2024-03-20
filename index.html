@@ -74,6 +74,7 @@ input[type="number"] {
     <h1>Simple Wallet DApp</h1>
     <div class="balance" id="userBalance">User Balance: Loading...</div>
     <div class="balance" id="contractBalance">Contract Balance: Loading...</div>
+    <div class="balance" id="connectionStatus">Connection Status: Loading...</div>
     <div class="input-field">
         <input type="number" id="amount" placeholder="Enter amount">
     </div>
@@ -421,6 +422,26 @@ input[type="number"] {
         // Call updateBalance functions on page load
         updateUserBalance();
         updateContractBalance();
+
+        async function updateConnectionStatus() {
+        if (window.ethereum) {
+            try {
+                await ethereum.request({ method: 'eth_requestAccounts' });
+                const accounts = await ethereum.request({ method: 'eth_accounts' });
+                if (accounts.length > 0) {
+                    const address = accounts[0];
+                    const shortenedAddress = address.substring(0, 6) + '...' + address.substring(address.length - 4);
+                    document.getElementById("connectionStatus").innerText = "Connected: " + shortenedAddress;
+                }
+            } catch (error) {
+                document.getElementById("connectionStatus").innerText = "Not Connected";
+            }
+        } else {
+            document.getElementById("connectionStatus").innerText = "Metamask (or equivalent) not detected";
+        }
+    }
+
+    updateConnectionStatus(); 
     </script>
 </body>
 </html>
